@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Windshield wipers",
+        "quantity":87576,
+        "price": "9999",
+        "minimumOrder":300,
+        "description": "featuring characters involved in exciting and usually dangerous activities and adventures The movie is closer ",
+        "img": "https://i.ibb.co/dMd6mHL/pexels-mikey-dabro-1002655.jpg"
+    },
+    {
+        "name": "Taillights/Turn signal",
+        "quantity":56774,
+        "price": "1006",
+        "minimumOrder":300,
+        "description": "A classic is an outstanding example of a particular style; something of lasting worth or with a timeless qualit",
+        "img": "https://i.ibb.co/BryWJ6g/pexels-hu-nh-t-2098691.jpg"
+    },
+    {
+        "name": "Rear Suspension",
+        "quantity":656737,
+        "price": "1450",
+        "minimumOrder":300,
+        "description": "Graphic novels contain complete narratives, whether or not they are part of a larger series",
+        "img": "https://i.ibb.co/LPNxyhr/pexels-stas-knop-1340588.jpg"
+    },
+    {
+        "name": "Catalytic Converter",
+        "quantity":456733,
+        "price": "1380",
+        "minimumOrder":100,
+        "description": "The traditional elements of the detective story are: (1) the seemingly perfect crime; (2) the wrongly accused suspect at whom circumstantial evidenc",
+        "img": "https://i.ibb.co/q5h4JB3/pexels-tirachard-kumtanom-733854.jpg"
+    },
+    {
+        "name": "Battery",
+        "quantity":23872,
+        "price": "120",
+        "minimumOrder":100,
+        "description": "A fantasy is something you imagine, which might involve dragons, unicorns, or an imaginary best friend",
+        "img": "https://i.ibb.co/4sRS24z/pexels-pixabay-159872.jpg"
+    },
+    {
+        "name": "Windscreen",
+        "quantity":643495,
+        "price": "1000",
+        "minimumOrder":100,
+        "description": "Broadly speaking, historical fiction is literature that takes place in the past",
+        "img": "https://i.ibb.co/Dfp3K7c/pexels-wendy-van-zyl-1112048.jpg"
+    },
+    {
+        "name": "Gear Lever",
+        "quantity":64540,
+        "price": "52100",
+        "minimumOrder":500,
+        "description": "From facts about the horror genre to interesting historical trends, if you love horror this list is for you!",
+        "img": "https://i.ibb.co/tXxH7w8/pexels-thought-catalog-904616.jpg"
+    },
+    {
+        "name": "Steering wheel",
+        "quantity":674550,
+        "price": "3000",
+        "minimumOrder":100,
+        "description": "Whereas genre fiction from Romance to Dystopian Horror is plot-driven, Literary Fiction is character-driven",
+        "img": "https://i.ibb.co/QXy74Ny/pexels-nitin-arya-1029141.jpg"
+    }
+]

@@ -2,9 +2,9 @@ import React from 'react';
 import Footer from '../Shared/Footer';
 import Banner from './Banner';
 import BussynessSum from './BussynessSum';
+import HomeTools from './HomeTools';
 import Information from './Information/Information';
 import Reviews from './Reviews';
-import Tools from './Tools';
 
 const Home = () => {
     return (
@@ -12,7 +12,7 @@ const Home = () => {
             <Banner></Banner>
             <BussynessSum></BussynessSum>
             <Reviews></Reviews>
-            <Tools></Tools>
+            <HomeTools></HomeTools>
             <Information></Information>
             <Footer></Footer>
         </div>

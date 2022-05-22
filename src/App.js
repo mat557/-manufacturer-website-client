@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Pages/About/About';
 import Blogs from './Pages/BLogs/Blogs';
+import CheckAndOrder from './Pages/Home/CheckAndOrder';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Navbar from './Pages/Shared/Navbar';
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/tools' element={<Tools></Tools>}></Route>
+        <Route path='/tool/:idOftool' element={<CheckAndOrder></CheckAndOrder>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
       </Routes>
