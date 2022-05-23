@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import ModalForOrder from '../Shared/ModalForOrder';
 import SingleItem from './SingleItem';
 
 const Tools = () => {
     const [tools,setTools] = useState([]);
+    const [order,setOrder] = useState(null);
     
     useEffect(()=>{
         fetch(`http://localhost:5000/tools`)
         .then(res => res.json())
         .then(data => setTools(data))
     },[]);
+
+    
 
     return (
         <div className='w-11/12 mx-auto'>
@@ -18,9 +22,11 @@ const Tools = () => {
                     tools.map(tool => <SingleItem
                     key={tool._id}
                     tool={tool}
+                    setOrder={setOrder}
                     ></SingleItem>)
                 }
             </div>
+            {order && <ModalForOrder order={order}></ModalForOrder>}
         </div>
     );
 };

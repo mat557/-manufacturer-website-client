@@ -1,6 +1,6 @@
 import React from "react";
 
-const SingleItem = ({tool}) => {
+const SingleItem = ({tool,setOrder}) => {
   return (
     <div className="card w-96 bg-base-100 shadow-xl image-full">
       <figure>
@@ -9,11 +9,11 @@ const SingleItem = ({tool}) => {
       <div className="card-body">
         <h2 className="card-title">{tool.name}</h2>
         <p>{tool.description}</p>
-        <p>Stock :{tool.quantity} pieces</p>
+        <p>{tool.quantity} {tool.quantity > 1 ? 'pieces' : 'piece'} available</p>
         <p>Price :{tool.price}$</p>
-        <p>Minimum Order:{tool.minimumOrder} pieces</p>
+        <p>Minimu order quantity : {tool.minimumOrder} pieces</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Order</button>
+          <label onClick={() => setOrder(tool)}  htmlFor="order-modal" className="btn btn-primary">Order</label>
         </div>
       </div>
     </div>
