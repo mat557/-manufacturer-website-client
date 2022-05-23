@@ -26,7 +26,7 @@ const Tools = () => {
                     ></SingleItem>)
                 }
             </div>
-            {order && <ModalForOrder order={order}></ModalForOrder>}
+            {order && <ModalForOrder setOrder={setOrder} order={order}></ModalForOrder>}
         </div>
     );
 };

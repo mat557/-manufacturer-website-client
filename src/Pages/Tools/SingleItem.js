@@ -2,7 +2,7 @@ import React from "react";
 
 const SingleItem = ({tool,setOrder}) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl image-full">
+    <div className="card  bg-base-100 shadow-xl image-full">
       <figure>
         <img src={tool.img} alt="Shoes" />
       </figure>
