@@ -12,10 +12,10 @@ const CustomizeUser = () => {
                 user : user.displayName,
                 email : user.email,
                 phone: event.target.phone.value,
-                city: event.target.phone.value,
-                education: event.target.education.value
+                city: event.target.city.value,
+                education: event.target.education.value,
+                img: event.target.photo.value
             }
-        console.log(updatedInfo);
 
         fetch(`http://localhost:5000/user/:${user.email}`,{
             method:"PUT",
@@ -29,7 +29,6 @@ const CustomizeUser = () => {
             if(data.acknowledged){
                 toast.success('Profile Updated')
             }
-            console.log(data)
         })
       }
 
