@@ -1,15 +1,41 @@
 import React from "react";
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from "react-toastify";
 
 const ModalForOrder = ({order,setOrder}) => {
-    
+  const [user] = useAuthState(auth);
+  
   const handleOrder = (event) =>{
+    
     event.preventDefault();
+          const unit = event.target.productAmount.value;
+                if(unit < 300){
+                  toast.error('Minimum order quality is 300');
+                }
+                else{
+                  const orders = {
+                    item : order.name,
+                    buyer : user.displayName,
+                    email : user.email,
+                    phone: event.target.phone.value,
+                    quantity: unit
+                }
 
-    const orderName = order.name;
-    const name = event.target.name.value;
-    console.log(name,orderName)
-
-    setOrder(null);
+                fetch(`http://localhost:5000/order`,{
+                  method : 'POST',
+                  headers :{
+                    'content-type': 'application/json'
+                  },
+                  body : JSON.stringify(orders)
+                })
+                .then(res => res.json())
+                .then(data =>{
+                  console.log(data);
+                  toast.success('Your order has been completed')
+                  setOrder(null);
+                })
+        }
   }
 
 
@@ -23,11 +49,11 @@ const ModalForOrder = ({order,setOrder}) => {
           
           <form onSubmit={handleOrder} className="grid grid-cols-1 gap-3 mt-2 justify-items-center">
                 <input type="text" readOnly value={order.name} className="input input-bordered w-full max-w-xs" />
-                <input type="text" name="name" placeholder="enter your name" className="input input-bordered w-full max-w-xs" />
-                <input type="email" name="email" placeholder="enter your email" className="input input-bordered w-full max-w-xs" />
-                <input type="text" placeholder="enter your phone" className="input input-bordered w-full max-w-xs" />
+                <input type="text" readOnly value={user.displayName}  className="input input-bordered w-full max-w-xs" />
+                <input type="email" readOnly value={user.email} className="input input-bordered w-full max-w-xs" />
+                <input type="text" name="phone" placeholder="enter your phone" className="input input-bordered w-full max-w-xs" />
                 <input type="text" name="productAmount" placeholder="enter the amount of prod." className="input input-bordered w-full max-w-xs" />
-                <input type="submit" value="Order Now" className="input-bordered btn w-11/12 max-w-auto" />
+                <input  type="submit" value="Order Now" className="input-bordered btn w-11/12 max-w-auto" />
           </form>
           
         </div>
