@@ -29,7 +29,7 @@ const ModalForOrder = ({order,setOrder}) => {
           <h3 className="font-bold text-lg">Place order for : {order.name}</h3>
           
           <form onSubmit={handleOrder} className="grid grid-cols-1 gap-3 mt-2 justify-items-center">
-                <input type="text" name="orderName" value={order.name} className="input input-bordered w-full max-w-xs" />
+                <input type="text" readOnly value={order.name} className="input input-bordered w-full max-w-xs" />
                 <input type="text" name="name" placeholder="enter your name" className="input input-bordered w-full max-w-xs" />
                 <input type="email" name="email" placeholder="enter your email" className="input input-bordered w-full max-w-xs" />
                 <input type="text" placeholder="enter your phone" className="input input-bordered w-full max-w-xs" />
