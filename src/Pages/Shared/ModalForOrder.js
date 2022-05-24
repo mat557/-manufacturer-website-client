@@ -1,5 +1,4 @@
 import React from "react";
-import { useForm } from "react-hook-form";
 
 const ModalForOrder = ({order,setOrder}) => {
     
@@ -8,16 +7,10 @@ const ModalForOrder = ({order,setOrder}) => {
 
     const orderName = order.name;
     const name = event.target.name.value;
-    // const name = event.target.name.value;
-    // const name = event.target.name.value;
-    // const name = event.target.name.value;
     console.log(name,orderName)
 
     setOrder(null);
   }
-
-    
-
 
 
   return (

@@ -16,9 +16,9 @@ const HomeProduct = ({product}) => {
       <div className="card-body">
         <h2 className="card-title">{product.name}</h2>
         <p>{product.description}</p>
-        <div className="card-actions justify-end">
-          <button onClick={() => handleToolsDetails(product._id)} className="btn btn-primary">Check and Order</button>
-        </div>
+          <div className="card-actions justify-end">
+            <button onClick={() => handleToolsDetails(product._id)} className="btn btn-primary">Check and Order</button>
+          </div>
       </div>
     </div>
   );

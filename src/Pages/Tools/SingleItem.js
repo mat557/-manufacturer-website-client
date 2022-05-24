@@ -12,9 +12,9 @@ const SingleItem = ({tool,setOrder}) => {
         <p>{tool.quantity} {tool.quantity > 1 ? 'pieces' : 'piece'} available</p>
         <p>Price :{tool.price}$</p>
         <p>Minimu order quantity : {tool.minimumOrder} pieces</p>
-        <div className="card-actions justify-end">
-          <label onClick={() => setOrder(tool)}  htmlFor="order-modal" className="btn btn-primary">Order</label>
-        </div>
+          <div className="card-actions justify-end">
+            <label onClick={() => setOrder(tool)}  htmlFor="order-modal" className="btn btn-primary">Order</label>
+          </div>
       </div>
     </div>
   );

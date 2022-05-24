@@ -17,6 +17,7 @@ const Tools = () => {
     return (
         <div className='w-11/12 mx-auto'>
             <p className='my-8 text-4xl text-center font-bold'>Everything In One Place!</p>
+            <p className='my-8 text-2xl text-center font-bold'>Login to place order</p>
             <div className="grid grid-cols-1 my-8 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
                     tools.map(tool => <SingleItem

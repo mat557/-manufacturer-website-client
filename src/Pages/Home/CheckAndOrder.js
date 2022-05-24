@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ModalForTool from "../Shared/ModalForTool";
 
 const CheckAndOrder = () => {
   const { idOftool } = useParams();
   const [singleData,setSingledata] = useState([]);
+  const [singleItem,setSingleItem] = useState(null);
 
   useEffect(()=>{
     const url = `http://localhost:5000/tools/${idOftool}`;
@@ -21,16 +23,17 @@ const CheckAndOrder = () => {
           alt="Shoes"
         />
       </figure>
-      <div className="card-body">
-        <h2 className="card-title">{singleData.name}</h2>
-        <p>{singleData.description}</p>
-        <p>{singleData.quantity} {singleData.quantity > 1 ? 'pieces' : 'piece'} available</p>
-        <p>Minimu order quantity : {singleData.minimumOrder}</p>
-        <p>Per unit cost : {singleData.price} $</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Order Now</button>
+        <div className="card-body">
+          <h2 className="card-title">{singleData.name}</h2>
+          <p>{singleData.description}</p>
+          <p>{singleData.quantity} {singleData.quantity > 1 ? 'pieces' : 'piece'} available</p>
+          <p>Minimu order quantity : {singleData.minimumOrder}</p>
+          <p>Per unit cost : {singleData.price} $</p>
+            <div className="card-actions justify-end">
+              <label htmlFor="single-order" onClick={()=>setSingleItem(singleData)}  className="btn btn-primary">Order</label>
+            </div>
         </div>
-      </div>
+        {singleItem && <ModalForTool singleItem={singleItem} setSingleItem={setSingleItem}></ModalForTool>}
     </div>
   );
 };
