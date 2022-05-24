@@ -13,7 +13,6 @@ const Navbar = () => {
   };
   
   
-  
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -42,11 +41,15 @@ const Navbar = () => {
                   <li><Link to="/blogs">Blogs</Link></li>
                   <li><Link to="/tools">Our Tools</Link></li>
                   <li><Link to="/about">About</Link></li>
+                  {user && <li><Link to="/dasboard">Dashboard</Link></li>}
                   {
                     user ?
                     <button onClick={logout} className="btn btn-sm">Signout</button>
                     :
-                    <li><Link to="/login">Login</Link></li> 
+                    <li>
+                      <Link to="/dashboard">Dashboard</Link>
+                      <Link to="/login">Login</Link>
+                    </li> 
                   }
                 </ul>
               </div>
