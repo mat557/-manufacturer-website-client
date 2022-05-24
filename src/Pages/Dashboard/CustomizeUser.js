@@ -7,31 +7,30 @@ const CustomizeUser = () => {
     const [user] = useAuthState(auth);
 
     const handleOrder = (event) =>{
-    
         event.preventDefault();
-                      const updatedInfo = {
-                        buyer : user.displayName,
-                        email : user.email,
-                        phone: event.target.phone.value,
-                        city: event.target.phone.value,
-                        education: event.target.education.value
-                    }
-                    
-                    console.log(updatedInfo);
-                    // fetch(`http://localhost:5000/order`,{
-                    //   method : 'POST',
-                    //   headers :{
-                    //     'content-type': 'application/json'
-                    //   },
-                    //   body : JSON.stringify(orders)
-                    // })
-                    // .then(res => res.json())
-                    // .then(data =>{
-                    //   console.log(data);
-                    //   toast.success('Your order has been completed')
-                    // //   setOrder(null);
-                    // })
-            
+            const updatedInfo = {
+                user : user.displayName,
+                email : user.email,
+                phone: event.target.phone.value,
+                city: event.target.phone.value,
+                education: event.target.education.value
+            }
+        console.log(updatedInfo);
+
+        fetch(`http://localhost:5000/user/:${user.email}`,{
+            method:"PUT",
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body : JSON.stringify(updatedInfo)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.acknowledged){
+                toast.success('Profile Updated')
+            }
+            console.log(data)
+        })
       }
 
 
