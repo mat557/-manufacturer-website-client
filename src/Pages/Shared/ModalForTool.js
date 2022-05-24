@@ -11,8 +11,8 @@ const ModalForTool = ({singleItem,setSingleItem}) => {
         event.preventDefault();
           const unit = event.target.productAmount.value;
           
-          if(unit < singleItem.minimumOrder){
-            toast.error('Minimum order quality is 300');
+          if(unit < singleItem.minimumOrder ||unit > singleItem.quantity){
+            toast.error(`You cannot order more then ${singleItem.quantity} or less then ${singleItem.minimumOrder} units`);
           }
           else{
                 const order = {

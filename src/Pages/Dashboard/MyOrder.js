@@ -15,6 +15,22 @@ const MyOrder = () => {
     },[user.email])
 
 
+    const handleDelete = (id) =>{
+        const url =`http://localhost:5000/order/${id}`;
+        console.log(url);
+            fetch(url,{
+                method : 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.acknowledged){
+                    window.location.reload(false);
+                }
+            });
+    }
+    
+
 
     return (
         <div>
@@ -43,7 +59,7 @@ const MyOrder = () => {
                                     <td>{o.email}</td>
                                     <td>{o.quantity}</td>
                                     <td>{o.quantity*o.perUnit}</td>
-                                    <td><button className="btn btn-xs">Delete</button></td>
+                                    <td><button onClick={()=>handleDelete(o._id)} className="btn btn-xs">Delete</button></td>
                                     <td><button className="btn btn-xs">Pay</button></td>
                                 </tr>)
                             }
