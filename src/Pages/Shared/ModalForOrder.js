@@ -10,7 +10,7 @@ const ModalForOrder = ({order,setOrder}) => {
     
     event.preventDefault();
           const unit = event.target.productAmount.value;
-                if(unit < 300){
+                if(unit < order.minimumOrder){
                   toast.error('Minimum order quality is 300');
                 }
                 else{
@@ -19,6 +19,7 @@ const ModalForOrder = ({order,setOrder}) => {
                     buyer : user.displayName,
                     email : user.email,
                     phone: event.target.phone.value,
+                    perUnit: order.price,
                     quantity: unit
                 }
 
