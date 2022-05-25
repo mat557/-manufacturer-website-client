@@ -45,7 +45,9 @@ function App() {
           <Route path='reviews' element={<MyReviews></MyReviews>}></Route>
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
           <Route path='admin' element={<Admin></Admin>}></Route>
-          <Route path='users' element={<AllUsers></AllUsers>}></Route>
+          <Route path='users' element={
+              <AllUsers></AllUsers>
+          }></Route>
           <Route path='profile/user' element={<CustomizeUser></CustomizeUser>}></Route>
         </Route>
 
