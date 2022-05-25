@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyOrder = () => {
     const [user] = useAuthState(auth);
     const [order,setOrder] = useState([]);
+    const navigate = useNavigate();
     
     useEffect(()=>{
         fetch(`http://localhost:5000/customOrder?email=${user.email}`,{
@@ -13,11 +15,19 @@ const MyOrder = () => {
                 'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-        .then(res => res.json())
+        .then(res => {
+            if(res.status === 401 || res.status === 403){
+                navigate('/')
+            }
+            else{
+                return res.json();
+            }
+            
+        })
         .then(data =>{
             setOrder(data);
         })
-    },[user.email])
+    },[user.email,navigate])
 
 
     const handleDelete = (id) =>{
@@ -57,7 +67,7 @@ const MyOrder = () => {
 
                         <tbody>
                             {
-                                order.map((o,index) => 
+                                order?.map((o,index) => 
                                 <tr key={o._id}>
                                     <th>{index + 1}</th>
                                     <td>{o.item}</td>

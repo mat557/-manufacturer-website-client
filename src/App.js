@@ -19,6 +19,7 @@ import CustomizeUser from './Pages/Dashboard/CustomizeUser';
 import Admin from './Pages/Dashboard/Admin';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
+import AllUsers from './Pages/Dashboard/AllUsers';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -44,6 +45,7 @@ function App() {
           <Route path='reviews' element={<MyReviews></MyReviews>}></Route>
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
           <Route path='admin' element={<Admin></Admin>}></Route>
+          <Route path='users' element={<AllUsers></AllUsers>}></Route>
           <Route path='profile/user' element={<CustomizeUser></CustomizeUser>}></Route>
         </Route>
 
