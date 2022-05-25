@@ -7,7 +7,12 @@ const MyOrder = () => {
     const [order,setOrder] = useState([]);
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/customOrder?email=${user.email}`)
+        fetch(`http://localhost:5000/customOrder?email=${user.email}`,{
+            method:'GET',
+            headers :{
+                'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
         .then(res => res.json())
         .then(data =>{
             setOrder(data);

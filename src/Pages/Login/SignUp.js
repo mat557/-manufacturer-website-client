@@ -3,7 +3,7 @@ import auth from "../../firebase.init";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useGetToken from '../../Hooks/useGetdataToken';
 
 const SignUp = () => {
@@ -17,13 +17,17 @@ const SignUp = () => {
       ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updatingError] = useUpdateProfile(auth);
     const navigate = useNavigate();
-    const [token] = useGetToken(neWuser || user)
+    const location = useLocation();
+    // console.log(user)
+    const [token] = useGetToken(neWuser || user);
+    
+    let from = location.state?.from?.pathname || "/";
 
     useEffect(()=>{
       if(token){
-        navigate('/tools');
+        navigate(from, { replace: true })
       }
-    },[token,navigate])
+    },[token,navigate,from])
     
 
     if(loading || neWloading || updating){
