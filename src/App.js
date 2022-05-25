@@ -16,8 +16,12 @@ import MyOrder from './Pages/Dashboard/MyOrder';
 import MyReviews from './Pages/Dashboard/MyReviews';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import CustomizeUser from './Pages/Dashboard/CustomizeUser';
+import Admin from './Pages/Dashboard/Admin';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './firebase.init';
 
 function App() {
+  const [user] = useAuthState(auth);
   return (
     <div className='mx-auto max-w-screen-xl'>
       <Navbar></Navbar>
@@ -39,6 +43,7 @@ function App() {
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path='reviews' element={<MyReviews></MyReviews>}></Route>
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='admin' element={<Admin></Admin>}></Route>
           <Route path='profile/user' element={<CustomizeUser></CustomizeUser>}></Route>
         </Route>
 

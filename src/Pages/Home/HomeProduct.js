@@ -8,8 +8,11 @@ const HomeProduct = ({product}) => {
     navigate(`/tool/${id}`)
   }
 
+
+  // card  bg-base-100 shadow-xl image-full mx-auto
+  // card lg:max-w-lg bg-base-100 shadow-xl
   return (
-    <div className="card w-96 bg-base-100 shadow-xl image-full mx-auto">
+    <div className="card image-full  shadow-xl lg:max-w-lg">
       <figure>
         <img src={product.img} alt="Shoes"/>
       </figure>

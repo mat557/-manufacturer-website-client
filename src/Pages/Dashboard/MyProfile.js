@@ -13,11 +13,10 @@ const MyProfile = () => {
     }
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/userByEmail?email=${user.email}`)
-        .then(res => res.json())
-        .then(data =>{
-            // console.log(data)
-            setUpdatedData(data);
+            fetch(`http://localhost:5000/userByEmail?email=${user.email}`)
+            .then(res => res.json())
+            .then(data =>{
+                setUpdatedData(data);
         })
     },[user])
     
@@ -26,10 +25,10 @@ const MyProfile = () => {
 
     return (
         <div className="card lg:card-side bg-base-100 shadow-xl">
-                <figure><img src={user.reloadUserInfo.photoUrl} alt="Album"/></figure>
+                <figure><img src={user?.reloadUserInfo?.photoUrl} alt="Album"/></figure>
                 <div className="card-body">
-                    <h2 className="card-title">{user.displayName}</h2>
-                    <p>{user.email}</p>
+                    <h2 className="card-title">{user?.displayName}</h2>
+                    <p>{user?.email}</p>
                     <p>Phone:{updatedData?.phone}</p>
                     <p>City:{updatedData?.city}</p>
                     <p>Education:{updatedData?.education}</p>
