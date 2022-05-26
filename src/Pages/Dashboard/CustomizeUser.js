@@ -17,7 +17,7 @@ const CustomizeUser = () => {
                 img: event.target.photo.value
             }
 
-        fetch(`http://localhost:5000/user/:${user.email}`,{
+        fetch(`https://safe-bastion-74544.herokuapp.com/user/:${user.email}`,{
             method:"PUT",
             headers:{
                 'Content-Type': 'application/json'

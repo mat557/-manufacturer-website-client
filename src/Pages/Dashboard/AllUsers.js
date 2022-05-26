@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const AllUsers = () => {
     const [users,setUser] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/alluser`,{
+        fetch(`https://safe-bastion-74544.herokuapp.com/alluser`,{
             method:'GET',
             headers:{
                 'authorization' :  `Bearer ${localStorage.getItem('accessToken')}`
@@ -17,7 +17,7 @@ const AllUsers = () => {
     },[users]);
 
     const makeAdmin = (email) =>{
-        fetch(`http://localhost:5000/newuser/admin/${email}`,{
+        fetch(`https://safe-bastion-74544.herokuapp.com/newuser/admin/${email}`,{
             method : 'PUT',
             headers : {
                 'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
@@ -25,8 +25,8 @@ const AllUsers = () => {
         })
         .then(res => res.json())
         .then(data => {
-            // console.log(data)
-            if(data?.result?.acknowledged){
+            console.log(data)
+            if(data?.acknowledged){
                 toast.success('Promoted to admin')
             }
             else{

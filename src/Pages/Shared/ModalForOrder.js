@@ -23,7 +23,7 @@ const ModalForOrder = ({order,setOrder}) => {
                   quantity: unit
               }
 
-              fetch(`http://localhost:5000/order`,{
+              fetch(`https://safe-bastion-74544.herokuapp.com/order`,{
                 method : 'POST',
                 headers :{
                   'content-type': 'application/json'

@@ -8,7 +8,7 @@ const CheckAndOrder = () => {
   const [singleItem,setSingleItem] = useState(null);
 
   useEffect(()=>{
-    const url = `http://localhost:5000/tools/${idOftool}`;
+    const url = `https://safe-bastion-74544.herokuapp.com/tools/${idOftool}`;
     fetch(url)
     .then(res => res.json())
     .then(data => setSingledata(data))

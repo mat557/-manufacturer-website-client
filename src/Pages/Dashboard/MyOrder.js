@@ -9,7 +9,7 @@ const MyOrder = () => {
     const navigate = useNavigate();
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/customOrder?email=${user.email}`,{
+        fetch(`https://safe-bastion-74544.herokuapp.com/customOrder?email=${user.email}`,{
             method:'GET',
             headers :{
                 'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
@@ -31,7 +31,7 @@ const MyOrder = () => {
 
 
     const handleDelete = (id) =>{
-        const url =`http://localhost:5000/order/${id}`;
+        const url =`https://safe-bastion-74544.herokuapp.com/order/${id}`;
         console.log(url);
             fetch(url,{
                 method : 'DELETE'
