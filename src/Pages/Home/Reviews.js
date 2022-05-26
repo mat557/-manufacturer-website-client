@@ -1,34 +1,19 @@
-import React from 'react';
-import one from '../../Photos/people1.png';
-import two from '../../Photos/people2.png';
-import three from '../../Photos/people3.png';
+import React, { useEffect, useState } from 'react';
 import SingleReview from './SingleReview';
 
 const Reviews = () => {
 
-    const reviews = [
-        {
-            _id : 1,
-            name : 'winston carcil',
-            company : 'hard point',
-            review : 'the product is best of the best , On time delevary ,no issue with quantity ,to the point quality ',
-            img : one
-        },
-        {
-            _id : 2,
-            name : 'winston carcil',
-            company : 'hard point',
-            review : 'the product is best of the best , On time delevary ,no issue with quantity ,to the point quality ',
-            img : one
-        },
-        {
-            _id : 3,
-            name : 'winston carcil',
-            company : 'hard point',
-            review : 'the product is best of the best , On time delevary ,no issue with quantity ,to the point quality ',
-            img : one
-        },
-    ]
+    const [reviewdata,setReviews] = useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:5000/getreview')
+        .then(res => res.json())
+        .then(data => {
+            setReviews(data);
+        })
+    },[]);
+
+    const reviews = reviewdata.slice(0,3);
+
     return (
         <div className='my-28'>
             <p className='text-center text-15px mt-4 font-bold'>Reviews</p>
