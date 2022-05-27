@@ -15,10 +15,10 @@ const Reviews = () => {
     const reviews = reviewdata.slice(0,3);
 
     return (
-        <div className='my-28'>
-            <p className='text-center text-15px mt-4 font-bold'>Reviews</p>
-            <p className='text-center text-4xl mb-8'>Read what our customer sayes</p>
-            <div className='grid grid-cols-1 my-8 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+        <div className='my-28 bg-gray-700 py-12 rounded'>
+            <p className='text-center text-15px mt-4 font-bold text-white'>Reviews</p>
+            <p className='text-center text-4xl mb-8 text-white'>Read what our customer sayes</p>
+            <div  className='grid grid-cols-1 my-8 mx-5 md:grid-cols-2 lg:grid-cols-3  gap-5'>
                 {
                     reviews.map(review => <SingleReview
                     key={review._id}

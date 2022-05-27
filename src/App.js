@@ -22,6 +22,7 @@ import auth from './firebase.init';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import NotFound from './Pages/Shared/NotFound';
 import Payment from './Pages/Dashboard/Payment';
+import AdminCheckOrder from './Pages/Dashboard/AdminCheckOrder';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -50,6 +51,7 @@ function App() {
           <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='users' element={<AllUsers></AllUsers>}></Route>
           <Route path='user' element={<CustomizeUser></CustomizeUser>}></Route>
+          <Route path='allorder' element={<AdminCheckOrder></AdminCheckOrder>}></Route>
         </Route>
 
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>

@@ -16,7 +16,7 @@ const CustomizeUser = () => {
          const image = data.image[0];
          const formData = new FormData();
          formData.append('image',image)
-         console.log(data)
+        //  console.log(data)
         
 
         const API_KEY = '4957c3c668ded462db1fb1002c4535e6';
@@ -28,7 +28,7 @@ const CustomizeUser = () => {
         })
         .then(res => res.json())
         .then(result => {
-            console.log('imgbb',result)
+            // console.log('imgbb',result)
             if(result.success){
                 console.log('image',result.data.url)
                 const img = result.data.url;
@@ -40,14 +40,14 @@ const CustomizeUser = () => {
                     education: data.education,
                     img: img
                 }
-                console.log(dataOfuser)
+                // console.log(dataOfuser)
 
                 fetch(`https://safe-bastion-74544.herokuapp.com/user/:${user.email}`,{
                         method:"PUT",
                         headers:{
-                    'Content-Type': 'application/json'
-                    },
-                body : JSON.stringify(dataOfuser)
+                        'Content-Type': 'application/json'
+                     },
+                    body : JSON.stringify(dataOfuser)
                 })
                 .then(res => res.json())
                 .then(data => {

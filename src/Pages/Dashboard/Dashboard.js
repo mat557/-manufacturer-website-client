@@ -30,6 +30,7 @@ const Dashboard = () => {
                             {!admin && <li><Link to='/dasboard/reviews'>My Reviews</Link></li>}
                             {admin && <li><Link to='/dasboard/admin'>Add Tool</Link></li>}
                             {admin &&<li><Link to='/dasboard/users'>All Users</Link></li>}
+                            {admin &&<li><Link to='/dasboard/allorder'>All Orders</Link></li>}
                     </ul>
                 </div>
             </div>

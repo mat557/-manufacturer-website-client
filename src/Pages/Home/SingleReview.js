@@ -2,7 +2,7 @@ import React from "react";
 
 const SingleReview = ({ review }) => {
   return (
-    <div className="card lg:max-w-lg bg-primary text-primary-content">
+    <div className="card lg:max-w-lg bg-gray-600 text-primary-content">
       <div className="card-body">
         {/* <h2 className="card-title">Card title!</h2> */}
         <p>{review.review}</p>
@@ -15,6 +15,7 @@ const SingleReview = ({ review }) => {
             <div>
                 <p className="text-xl">{review?.name}</p>
                 <p className="text-xl">Owner Of:{review?.company}</p>
+                <p className="text-xl">ratings:{review?.ratings}</p>
             </div>
         </div>
       </div>
