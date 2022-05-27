@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const MyReviews = () => {
     const [user] = useAuthState(auth);
-    console.log(user)
+    const [myrev,setMyrev] = useState([]);
+
+    useEffect(()=>{
+        fetch(`http://localhost:5000/singlereview/${user?.email}`)
+        .then(res => res.json())
+        .then(rev =>{
+            console.log(rev)
+            setMyrev(rev)
+        })
+    },[user])
+
+    console.log(myrev)
+
+
     
     const addReview = (event) =>{
         event.preventDefault();
         const ratings = event.target.ratings.value;
-        if(ratings >5 || ratings < 0){
+        if(ratings > 5 || ratings < 0){
             toast.error('Rating should be in range of 1-5')
         }
         else{
@@ -44,6 +57,9 @@ const MyReviews = () => {
     return (
         <div>
             <p>Add A Review</p>
+            <div>
+                <p className='text'>{myrev.length === 0 ? 'My Review' : 'Add Review'}</p>
+            </div>
             <div>
             <form onSubmit={addReview} className="grid grid-cols-1 gap-3 mt-2 justify-items-center">
                       <input type="text" readOnly value={user?.displayName}  className="input input-bordered w-full max-w-xs" />

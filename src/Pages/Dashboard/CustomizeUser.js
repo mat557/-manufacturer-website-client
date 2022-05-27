@@ -1,50 +1,88 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify'
 
 const CustomizeUser = () => {
     const [user] = useAuthState(auth);
 
-    const handleOrder = (event) =>{
-        event.preventDefault();
-            const updatedInfo = {
-                user : user.displayName,
-                email : user.email,
-                phone: event.target.phone.value,
-                city: event.target.city.value,
-                education: event.target.education.value,
-                img: event.target.photo.value
-            }
 
-        fetch(`https://safe-bastion-74544.herokuapp.com/user/:${user.email}`,{
-            method:"PUT",
-            headers:{
-                'Content-Type': 'application/json'
-            },
-            body : JSON.stringify(updatedInfo)
+
+    const { register, handleSubmit, formState: { errors }} = useForm();
+    
+    
+    const onSubmit = data =>{
+         const image = data.image[0];
+         const formData = new FormData();
+         formData.append('image',image)
+         console.log(data)
+        
+
+        const API_KEY = '4957c3c668ded462db1fb1002c4535e6';
+        const url = `https://api.imgbb.com/1/upload?key=${API_KEY}`;
+
+        fetch(url,{
+            method : 'POST',
+            body : formData,
         })
         .then(res => res.json())
-        .then(data => {
-            if(data.acknowledged){
-                toast.success('Profile Updated')
+        .then(result => {
+            console.log('imgbb',result)
+            if(result.success){
+                console.log('image',result.data.url)
+                const img = result.data.url;
+                const dataOfuser = {
+                    user : user?.displayName,
+                    email : user?.email,
+                    phone: data.phone,
+                    city: data.city,
+                    education: data.education,
+                    img: img
+                }
+                console.log(dataOfuser)
+
+                fetch(`https://safe-bastion-74544.herokuapp.com/user/:${user.email}`,{
+                        method:"PUT",
+                        headers:{
+                    'Content-Type': 'application/json'
+                    },
+                body : JSON.stringify(dataOfuser)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.acknowledged){
+                        toast.success('Profile Updated')
+                    }
+                })
             }
         })
-      }
+    };
+
+
+
+
 
 
     return (
         <div>
-            <p className='text-center text-green-500'>Want to Update Your Data?</p>
-            <form onSubmit={handleOrder} className="grid grid-cols-1 gap-3 mt-2 justify-items-center">
-                <input type="text" readOnly value={user.displayName}  className="input input-bordered w-full max-w-xs" />
-                <input type="email" readOnly value={user.email} className="input input-bordered w-full max-w-xs" />
-                <input type="text" name="phone" placeholder="enter your phone" className="input input-bordered w-full max-w-xs" />
-                <input type="text" name="city" placeholder="enter your city name." className="input input-bordered w-full max-w-xs" />
-                <input type="text" name="education" placeholder="your education" className="input input-bordered w-full max-w-xs" />
-                <input type="file" name="photo" placeholder="your photo" className="input input-bordered w-full max-w-xs" />
-                <input  type="submit" value="Update" className="input-bordered btn w-75 max-w-auto" />
-          </form>
+            <p className="text-teal-900">Want to Update Your Profile?</p>
+            <form className='flex flex-col ml-2' onSubmit={handleSubmit(onSubmit)}>
+                <input type="text" {...register("phone",{ required: true, message : 'This field is required'})} placeholder="phone number"          className="input input-ghost w-full max-w-xs my-2" />
+                {errors.name?.type === 'required' && <span className='text-red-500'>This field is required</span>}
+                
+                <input type="text" {...register("city",{ required: true, message : 'This field is required'})} placeholder="Enter your city"  className="input input-ghost w-full max-w-xs my-2" />
+                {errors.quantity?.type === 'required' && <span className='text-red-500'>This field is required</span>}
+                
+                <input type="text" {...register("education",{ required: true, message : 'This field is required'})} placeholder="your education"       className="input input-ghost w-full max-w-xs my-2" />
+                {errors.price?.type === 'required' && <span className='text-red-500'>This field is required</span>}
+                
+                
+                <input type="file" {...register("image",{ required: true, message : 'This field is required'})} placeholder="product image"        className="input input-ghost w-full max-w-xs my-2" />
+                {errors.image?.type === 'required' && <span className='text-red-500'>This field is required</span>}
+                
+                <input value="update"  className="btn btn-outline w-75 mr-auto" type="submit" />
+            </form>
         </div>
     );
 };

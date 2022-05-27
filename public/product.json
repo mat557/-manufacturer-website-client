@@ -4,63 +4,64 @@
         "quantity":87576,
         "price": "9999",
         "minimumOrder":300,
-        "description": "featuring characters involved in exciting and usually dangerous activities and adventures The movie is closer ",
-        "img": "https://i.ibb.co/dMd6mHL/pexels-mikey-dabro-1002655.jpg"
+        "description": "Driving in the rain can be stressful, especially at night. The windshield wiper provides optimal night clarity and enhances safer driving.",
+        "img": "https://i.ibb.co/87X4kgQ/pexels-maria-tyutina-7409799.jpg"
     },
     {
         "name": "Taillights/Turn signal",
         "quantity":56774,
         "price": "1006",
         "minimumOrder":300,
-        "description": "A classic is an outstanding example of a particular style; something of lasting worth or with a timeless qualit",
-        "img": "https://i.ibb.co/BryWJ6g/pexels-hu-nh-t-2098691.jpg"
+        "description": "They are red in color and have accompanying white lights beside them to indicate when the vehicle is in reverse. When you're on the road, tail lights make other car's aware of your presence so that you can travel safely in the dark",
+        "img": "https://i.ibb.co/kg6LD5B/pexels-erik-mclean-9827743.jpg"
     },
     {
         "name": "Rear Suspension",
         "quantity":656737,
         "price": "1450",
         "minimumOrder":300,
-        "description": "Graphic novels contain complete narratives, whether or not they are part of a larger series",
-        "img": "https://i.ibb.co/LPNxyhr/pexels-stas-knop-1340588.jpg"
+        "description": "The rear suspension of a luxury coupe is designed to maximize comfort and will have a softer suspension that absorbs more movement",
+        "img": "https://i.ibb.co/Z2xFYJj/640-166667398-suspension-bridge.jpg"
     },
     {
         "name": "Catalytic Converter",
         "quantity":456733,
         "price": "1380",
         "minimumOrder":100,
-        "description": "The traditional elements of the detective story are: (1) the seemingly perfect crime; (2) the wrongly accused suspect at whom circumstantial evidenc",
-        "img": "https://i.ibb.co/q5h4JB3/pexels-tirachard-kumtanom-733854.jpg"
+        "description": "A catalytic converter is an exhaust emission control device that converts toxic gases and pollutants in exhaust gas from an internal combustion engine into less-toxic pollutants by catalyzing a redox reaction",
+        "img": "https://i.ibb.co/285Q26R/download-2.jpg"
     },
     {
         "name": "Battery",
         "quantity":23872,
         "price": "120",
         "minimumOrder":100,
-        "description": "A fantasy is something you imagine, which might involve dragons, unicorns, or an imaginary best friend",
-        "img": "https://i.ibb.co/4sRS24z/pexels-pixabay-159872.jpg"
+        "description": "An automotive battery or car battery is a rechargeable battery that is used to start a motor vehicle. Its main purpose is to provide an electric current to diferent unit of a car",
+        "img": "https://i.ibb.co/9hJ0rFh/pexels-towfiqu-barbhuiya-8556051.jpg"
     },
     {
         "name": "Windscreen",
         "quantity":643495,
         "price": "1000",
         "minimumOrder":100,
-        "description": "Broadly speaking, historical fiction is literature that takes place in the past",
-        "img": "https://i.ibb.co/Dfp3K7c/pexels-wendy-van-zyl-1112048.jpg"
+        "description": "A windscreen, also known as a windshield, is the glass at the front of a vehicle through which the road can be seen.",
+        "img": "https://i.ibb.co/yF60Z9C/pexels-erik-mclean-5589315.jpg"
     },
     {
         "name": "Gear Lever",
         "quantity":64540,
-        "price": "52100",
+        "price": "520",
         "minimumOrder":500,
-        "description": "From facts about the horror genre to interesting historical trends, if you love horror this list is for you!",
-        "img": "https://i.ibb.co/tXxH7w8/pexels-thought-catalog-904616.jpg"
+        "description": "A gear lever or a gear stick is the lever that you use to change gear in a car or other vehicle",
+        "img": "https://i.ibb.co/qrMhZMp/pexels-erik-mclean-7453891.jpg"
     },
     {
         "name": "Steering wheel",
         "quantity":674550,
         "price": "3000",
         "minimumOrder":100,
-        "description": "Whereas genre fiction from Romance to Dystopian Horror is plot-driven, Literary Fiction is character-driven",
-        "img": "https://i.ibb.co/QXy74Ny/pexels-nitin-arya-1029141.jpg"
+        "description": "A steering wheel is the part of a vehicle that a person uses to determine the direction that the vehicle will go",
+        "img": "https://i.ibb.co/zFSjVmx/pexels-ingo-joseph-13781.jpg"
     }
 ]
+

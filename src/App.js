@@ -20,6 +20,8 @@ import Admin from './Pages/Dashboard/Admin';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
 import AllUsers from './Pages/Dashboard/AllUsers';
+import NotFound from './Pages/Shared/NotFound';
+import Payment from './Pages/Dashboard/Payment';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -41,19 +43,19 @@ function App() {
           <Dashboard></Dashboard>
         </RequireAuth>
         }>
-          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route path='order' element={<MyOrder></MyOrder>}></Route>
           <Route path='reviews' element={<MyReviews></MyReviews>}></Route>
-          <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+          <Route index  element={<MyProfile></MyProfile>}></Route>
           <Route path='admin' element={<Admin></Admin>}></Route>
-          <Route path='users' element={
-              <AllUsers></AllUsers>
-          }></Route>
-          <Route path='profile/user' element={<CustomizeUser></CustomizeUser>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
+          <Route path='users' element={<AllUsers></AllUsers>}></Route>
+          <Route path='user' element={<CustomizeUser></CustomizeUser>}></Route>
         </Route>
 
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<SignUp></SignUp>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
     </div>

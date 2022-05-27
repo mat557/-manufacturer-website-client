@@ -31,8 +31,7 @@ const HomeTools = () => {
                 }
             </div>
 
-            
-            <button onClick={visiteTools} className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Visite Tools</button>
+            <button  onClick={visiteTools} className="btn btn-sm">Visite Tools</button>
         </div>
     );
 };

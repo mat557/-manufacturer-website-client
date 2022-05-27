@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Footer from '../Shared/Footer';
 import ModalForOrder from '../Shared/ModalForOrder';
 import SingleItem from './SingleItem';
 
@@ -28,6 +29,7 @@ const Tools = () => {
                 }
             </div>
             {order && <ModalForOrder setOrder={setOrder} order={order}></ModalForOrder>}
+            <Footer></Footer>
         </div>
     );
 };
