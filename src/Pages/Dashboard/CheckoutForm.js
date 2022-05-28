@@ -11,7 +11,7 @@ const CheckoutForm = ({amount}) => {
 
 
       useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://safe-bastion-74544.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

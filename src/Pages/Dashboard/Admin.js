@@ -37,7 +37,7 @@ const Admin = () => {
                     img :img
                 }
 
-                fetch(`http://localhost:5000/newTool`,{
+                fetch(`https://safe-bastion-74544.herokuapp.com/newTool`,{
                     method:'POST',
                     headers:{
                         'content-type':'application/json'

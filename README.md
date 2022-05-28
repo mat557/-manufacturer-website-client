@@ -5,7 +5,27 @@
  *there is a home page holding diferent component.
  *You can order product both from home page and separate section called our tools
  *find your order in dashboard 
- *however there is diferent role for admin..admin can delete any user
+ *however there is diferent role for admin..admin can delete any user and also can upload tools that is produced by the company
+ *explore blog section two know somw unsware and question 
+ *ofcourse you need to log in to explore these feature
+
+# Techknowlodgy used
+ 
+ *java script
+ *react 
+ *express
+ *mongodb
+ *tailwind and daisyUi
+
+# important link
+ * github link for client side code 
+    https://github.com/programming-hero-web-course1/manufacturer-website-client-side-mat557
+
+ * github link for server side code
+    https://github.com/programming-hero-web-course1/manufacturer-website-server-side-mat557
+
+ * live website link
+    https://last-assignment-e8d37.web.app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

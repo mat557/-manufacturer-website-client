@@ -16,7 +16,7 @@ const MyProfile = () => {
     
 
     useEffect(()=>{
-            fetch(`http://localhost:5000/userByEmail/?email=${user?.email}`)
+            fetch(`https://safe-bastion-74544.herokuapp.com/userByEmail/?email=${user?.email}`)
             .then(res => res.json())
             .then(data =>{
                 setUpdatedData(data);

@@ -13,7 +13,7 @@ const stripePromise = loadStripe('pk_test_51L3hrnJjOZbm6hzBHdw5iX5GnQeRTyFDsN7kv
 const Payment = () => {
     const {id} = useParams();
     const [item,setItem] = useState([]);
-    const url = `http://localhost:5000/payment/${id}`;
+    const url = `https://safe-bastion-74544.herokuapp.com/payment/${id}`;
     
 
     useEffect(()=>{

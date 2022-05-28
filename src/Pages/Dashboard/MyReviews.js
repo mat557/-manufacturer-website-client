@@ -8,7 +8,7 @@ const MyReviews = () => {
     const [myrev,setMyrev] = useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/singlereview/${user?.email}`)
+        fetch(`https://safe-bastion-74544.herokuapp.com/singlereview/${user?.email}`)
         .then(res => res.json())
         .then(rev =>{
             console.log(rev)
@@ -35,7 +35,7 @@ const MyReviews = () => {
                 review : event.target.review.value,
                 ratings : event.target.ratings.value
             }
-            fetch(`http://localhost:5000/addreview`,{
+            fetch(`https://safe-bastion-74544.herokuapp.com/addreview`,{
                 method : 'POST',
                 headers :{
                     'content-type': 'application/json'

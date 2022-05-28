@@ -6,7 +6,7 @@ const AdminCheckOrder = () => {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/getorder`)
+        fetch(`https://safe-bastion-74544.herokuapp.com/getorder`)
         .then(res =>res.json())
         .then(result => {
             // console.log(result)
@@ -16,7 +16,7 @@ const AdminCheckOrder = () => {
 
     const deleteOrder = (order) =>{
         
-        fetch(`http://localhost:5000/delete/${order._id}`,{
+        fetch(`https://safe-bastion-74544.herokuapp.com/delete/${order._id}`,{
             method : 'DELETE',
             headers:{
                 'content-type' : 'application/json'
