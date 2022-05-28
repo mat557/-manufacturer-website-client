@@ -57,9 +57,9 @@ const MyReviews = () => {
     return (
         <div>
             <p>Add A Review</p>
-            <div>
+            {/* <div>
                 <p className='text'>{myrev.length === 0 ? 'My Review' : 'Add Review'}</p>
-            </div>
+            </div> */}
             <div>
             <form onSubmit={addReview} className="grid grid-cols-1 gap-3 mt-2 justify-items-center">
                       <input type="text" readOnly value={user?.displayName}  className="input input-bordered w-full max-w-xs" />

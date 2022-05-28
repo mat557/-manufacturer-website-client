@@ -56,7 +56,7 @@ const Admin = () => {
 
     return (
         <div>
-            <p>Add Services</p>
+            <p>Add A Tool</p>
 
             <form className='flex flex-col ml-2' onSubmit={handleSubmit(onSubmit)}>
                 <input type="text" {...register("name",{ required: true, message : 'This field is required'})} placeholder="product name"          className="input input-ghost w-full max-w-xs my-2" />

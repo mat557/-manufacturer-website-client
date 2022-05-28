@@ -19,7 +19,7 @@ const useGetToken = user =>{
             const token= data.token;
             localStorage.setItem('accessToken',token)
             setToken(token);
-            //   console.log('from gettoke',data)
+              console.log('from gettoke',data)
             })
         }
         else{

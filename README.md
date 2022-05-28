@@ -1,5 +1,12 @@
 # Getting Started with Create React App
 
+# About the website
+
+ *there is a home page holding diferent component.
+ *You can order product both from home page and separate section called our tools
+ *find your order in dashboard 
+ *however there is diferent role for admin..admin can delete any user
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

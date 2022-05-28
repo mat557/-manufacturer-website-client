@@ -17,15 +17,15 @@ import MyReviews from './Pages/Dashboard/MyReviews';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import CustomizeUser from './Pages/Dashboard/CustomizeUser';
 import Admin from './Pages/Dashboard/Admin';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from './firebase.init';
+// import { useAuthState } from 'react-firebase-hooks/auth';
+// import auth from './firebase.init';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import NotFound from './Pages/Shared/NotFound';
 import Payment from './Pages/Dashboard/Payment';
 import AdminCheckOrder from './Pages/Dashboard/AdminCheckOrder';
 
 function App() {
-  const [user] = useAuthState(auth);
+  // const [user] = useAuthState(auth);
   return (
     <div className='mx-auto max-w-screen-xl'>
       <Navbar></Navbar>

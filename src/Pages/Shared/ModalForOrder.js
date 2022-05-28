@@ -32,9 +32,10 @@ const ModalForOrder = ({order,setOrder}) => {
               })
               .then(res => res.json())
               .then(data =>{
-                // console.log(data);
-                toast.success('Your order has been completed')
-                setOrder(null);
+                if(data.acknowledged){
+                  toast.success('Your order has been completed')
+                  setOrder(null);
+                }
               })
         }
     }

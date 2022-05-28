@@ -54,10 +54,10 @@ const AllUsers = () => {
                     <tbody>
                     {
                         users.map((user,index) =>
-                            <tr key={user._id}>
+                            <tr key={user?._id}>
                                 <th>{index + 1}</th>
-                                <td>{user.email}</td>
-                                <td>{user.role !== 'Admin' && <button onClick={()=>makeAdmin(user.email)} className="btn btn-xs">Make Admin</button>}</td>
+                                <td>{user?.email}</td>
+                                <td>{user?.role !== 'Admin' && <button onClick={()=>makeAdmin(user.email)} className="btn btn-xs">Make Admin</button>}</td>
                                 <td><button className="btn btn-xs">Remove User</button></td>
                             </tr>
                         )
